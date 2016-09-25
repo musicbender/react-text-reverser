@@ -1,0 +1,11 @@
+@import 'variables.scss';
+
+.body-txt {
+    margin: 3em auto 0 auto;
+    padding: 0 2em;
+    text-align: center;
+}
+
+p {
+    font-size: $p-size;
+}
