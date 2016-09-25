@@ -1,5 +1,7 @@
 import React from 'react';
 import { render } from 'react-dom';
+import DisplayText from './components/display-text.jsx';
+import UserInput from './components/user-input.jsx';
 
 var Container = React.createClass({
     getInitialState: function () {
@@ -8,9 +10,9 @@ var Container = React.createClass({
         }
     },
     
-    handleInputChange: function (e) {
+    changeInput: function (newText) {
         this.setState({
-            userInput: e.target.value
+            userInput: newText
         })
     },
     
@@ -18,8 +20,8 @@ var Container = React.createClass({
         return (
             <div>
                 <h1>Text Reverser</h1>
-                <input type="text" onChange={ this.handleInputChange } value={ this.state.userInput } />
-                <h2 className="output">{ this.state.userInput }</h2>
+                <UserInput onChange={this.changeInput} />
+                <DisplayText text={this.state.userInput} />
             </div>  
         )
     }
