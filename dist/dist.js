@@ -53,8 +53,31 @@
 
 	'use strict';
 
-	var React = __webpack_require__(2);
-	var ReactDOM = __webpack_require__(35);
+	var _react = __webpack_require__(2);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _reactDom = __webpack_require__(35);
+
+	var _Container = __webpack_require__(176);
+
+	var _Container2 = _interopRequireDefault(_Container);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var App = _react2.default.createClass({
+	    displayName: 'App',
+
+	    render: function render() {
+	        return _react2.default.createElement(
+	            'div',
+	            null,
+	            _react2.default.createElement(_Container2.default, null)
+	        );
+	    }
+	});
+
+	(0, _reactDom.render)(_react2.default.createElement(App, null), document.getElementById('app'));
 
 /***/ },
 /* 2 */
@@ -21421,6 +21444,129 @@
 
 	module.exports = ReactDOMNullInputValuePropHook;
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)))
+
+/***/ },
+/* 173 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+
+	var _react = __webpack_require__(2);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var DisplayText = _react2.default.createClass({
+	    displayName: 'DisplayText',
+
+
+	    render: function render() {
+	        return _react2.default.createElement(
+	            'h2',
+	            null,
+	            this.props.text
+	        );
+	    }
+	});
+
+	exports.default = DisplayText;
+
+/***/ },
+/* 174 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+
+	var _react = __webpack_require__(2);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var UserInput = _react2.default.createClass({
+	    displayName: "UserInput",
+
+	    handleChange: function handleChange(e) {
+	        var i = e.target.value;
+	        this.props.onChange(i);
+	    },
+
+	    render: function render() {
+	        return _react2.default.createElement("input", { type: "text", onChange: this.handleChange });
+	    }
+	});
+
+	exports.default = UserInput;
+
+/***/ },
+/* 175 */,
+/* 176 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+
+	var _react = __webpack_require__(2);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _displayText = __webpack_require__(173);
+
+	var _displayText2 = _interopRequireDefault(_displayText);
+
+	var _userInput = __webpack_require__(174);
+
+	var _userInput2 = _interopRequireDefault(_userInput);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var Container = _react2.default.createClass({
+	    displayName: 'Container',
+
+	    getInitialState: function getInitialState() {
+	        return {
+	            userInput: ''
+	        };
+	    },
+
+	    reverseText: function reverseText(text) {
+	        return text.split("").reverse().join('');
+	    },
+
+	    changeInput: function changeInput(newText) {
+	        this.setState({
+	            userInput: this.reverseText(newText)
+	        });
+	    },
+
+	    render: function render() {
+	        return _react2.default.createElement(
+	            'div',
+	            null,
+	            _react2.default.createElement(
+	                'h1',
+	                null,
+	                'Text Reverser'
+	            ),
+	            _react2.default.createElement(_userInput2.default, { onChange: this.changeInput }),
+	            _react2.default.createElement(_displayText2.default, { text: this.state.userInput })
+	        );
+	    }
+	});
+
+	exports.default = Container;
 
 /***/ }
 /******/ ]);

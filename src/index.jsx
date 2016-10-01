@@ -1,34 +1,15 @@
 import React from 'react';
 import { render } from 'react-dom';
-import DisplayText from './components/display-text.jsx';
-import UserInput from './components/user-input.jsx';
+import Container from './components/Container.jsx';
 
-var Container = React.createClass({
-    getInitialState: function () {
-        return {
-            userInput: ''
-        }
-    },
-    
-    changeInput: function (newText) {
-        this.setState({
-            userInput: newText
-        })
-    },
-    
+var App = React.createClass({
     render: function () {
         return (
             <div>
-                <h1>Text Reverser</h1>
-                <UserInput onChange={this.changeInput} />
-                <DisplayText text={this.state.userInput} />
-            </div>  
+                <Container />
+            </div>   
         )
     }
 });
 
-render(<Container />, document.getElementById('app'));
-    
-
-
-
+render(<App />, document.getElementById('app'));
