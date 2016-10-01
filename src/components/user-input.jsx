@@ -1,4 +1,5 @@
 import React from 'react';
+import '../style/user-input.scss'
 
 var UserInput =  React.createClass({
     handleChange: function (e) {

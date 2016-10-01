@@ -1,4 +1,5 @@
 import React from 'react';
+import '../style/display-text.scss';
 
 var DisplayText = React.createClass({
     
