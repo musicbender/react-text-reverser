@@ -8,8 +8,10 @@ var UserInput =  React.createClass({
     },
     
     render: function () {
+        var focus = true;
+        
         return (   
-                <input type="text" onChange={this.handleChange} />
+                <input type="text" onChange={this.handleChange} autoFocus={focus} />
         )
     }
 });

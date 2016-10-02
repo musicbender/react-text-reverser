@@ -10,4 +10,4 @@ var DisplayText = React.createClass({
     }
 });
 
-export default DisplayText;
+export default DisplayText; 
